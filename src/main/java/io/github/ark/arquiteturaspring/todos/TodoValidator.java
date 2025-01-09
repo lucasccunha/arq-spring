@@ -13,11 +13,11 @@ public class TodoValidator {
 
     public void validar(TodoEntity todo) {
         if(existeTodoComDescricao(todo.getDescricao())) {
-            throw new IllegalArgumentException("Jpa existe um TODO com esta descrição!");
+            throw new IllegalArgumentException("Ja existe um TODO com esta descrição!");
         }
     }
 
     private boolean existeTodoComDescricao(String descricao) {
-        return  repository.existsByDescricao(descricao);
+        return repository.existsByDescricao(descricao);
     }
 }
